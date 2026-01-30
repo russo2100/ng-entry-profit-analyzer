@@ -1,0 +1,49 @@
+# NG Entry & Profit Analyzer Configuration
+
+data_sources:
+  primary: yahoo_fin
+  fallback: investing_com
+  local_cache: data/ng_history.csv
+  cache_ttl_hours: 24
+
+eia_api:
+  endpoint: https://api.eia.gov/v2/natural-gas/stor/wkly/data
+  api_key_env: EIA_API_KEY
+  cache_path: data/eia_cache.json
+  cache_ttl_seconds: 3600
+
+trading_hours:
+  timezone: Europe/Moscow
+  start: "09:00"
+  end: "23:50"
+  days: [1, 2, 3, 4, 5, 6]  # Пн-Сб
+
+risk_defaults:
+  max_risk_percent: 2.0
+  min_rrr: 1.5
+  atr_period: 14
+  stop_loss_atr_multiplier: 2.0
+
+telegram:
+  bot_token_env: TELEGRAM_BOT_TOKEN
+  chat_id_env: TELEGRAM_CHAT_ID
+  enabled: true
+  retry_attempts: 2
+
+outputs:
+  directory: outputs/
+  format: json
+  archive_after_days: 30
+  include_timestamp: true
+
+logging:
+  level: INFO
+  format: json
+  file: logs/ng_analyzer.log
+  max_bytes: 10485760  # 10 MB
+  backup_count: 5
+
+contracts:
+  yaml_path: src/contracts.yaml
+  auto_resolve_continuous: true
+  warn_days_before_expiry: 7

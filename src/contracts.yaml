@@ -1,0 +1,87 @@
+# Natural Gas Futures Contracts Mapping
+# Updated: 2026-01-30
+# Source: NYMEX / ICE / Broker API
+
+natural_gas:
+  # Continuous contract (front month auto-resolution)
+  NG1!:
+    type: continuous
+    description: "Front month continuous contract (auto-resolves to nearest expiry)"
+  
+  # Specific month contracts (update monthly)
+  NGH26:
+    figi: "BBG000N4R6V1"
+    exchange: "NYMEX"
+    expiry: "2026-03-27"
+    description: "Natural Gas March 2026"
+    
+  NGJ26:
+    figi: "BBG000N4R7W2"
+    exchange: "NYMEX"
+    expiry: "2026-04-28"
+    description: "Natural Gas April 2026"
+    
+  NGK26:
+    figi: "BBG000N4R8X3"
+    exchange: "NYMEX"
+    expiry: "2026-05-27"
+    description: "Natural Gas May 2026"
+    
+  NGM26:
+    figi: "BBG000N4R9Y4"
+    exchange: "NYMEX"
+    expiry: "2026-06-26"
+    description: "Natural Gas June 2026"
+    
+  NGN26:
+    figi: "BBG000N4RAZ5"
+    exchange: "NYMEX"
+    expiry: "2026-07-29"
+    description: "Natural Gas July 2026"
+    
+  NGQ26:
+    figi: "BBG000N4RBQ6"
+    exchange: "NYMEX"
+    expiry: "2026-08-27"
+    description: "Natural Gas August 2026"
+    
+  NGU26:
+    figi: "BBG000N4RCU7"
+    exchange: "NYMEX"
+    expiry: "2026-09-28"
+    description: "Natural Gas September 2026"
+    
+  NGV26:
+    figi: "BBG000N4RDV8"
+    exchange: "NYMEX"
+    expiry: "2026-10-28"
+    description: "Natural Gas October 2026"
+    
+  NGX26:
+    figi: "BBG000N4REX9"
+    exchange: "NYMEX"
+    expiry: "2026-11-25"
+    description: "Natural Gas November 2026"
+    
+  NGZ26:
+    figi: "BBG000N4RFZ0"
+    exchange: "NYMEX"
+    expiry: "2026-12-29"
+    description: "Natural Gas December 2026"
+    
+  NGF27:
+    figi: "BBG000N4RGF1"
+    exchange: "NYMEX"
+    expiry: "2027-01-27"
+    description: "Natural Gas January 2027"
+    
+  NGG27:
+    figi: "BBG000N4RHG2"
+    exchange: "NYMEX"
+    expiry: "2027-02-24"
+    description: "Natural Gas February 2027"
+
+# Maintenance notes:
+# - Update FIGIs when new contracts are listed (typically 2-3 months before expiry)
+# - Use scripts/update_contracts.py to auto-fetch from broker API
+# - Archive expired contracts quarterly
